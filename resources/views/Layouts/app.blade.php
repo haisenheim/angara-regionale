@@ -4,14 +4,11 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
-    <meta name="description" content="Angara — plateforme financière. Déploiement Banque Camerounaise des Petites et Moyennes Entreprises (BC-PME).">
-    <title>ANGARA | @yield('title')</title>
+    <meta name="description" content="{{ config('branding.name') }} — {{ config('branding.tagline') }}">
+    <title>{{ config('branding.name') }} | @yield('title')</title>
     <!-- STYLESHEETS -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <!-- Fonts [ OPTIONAL ] -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Open+Sans:wght@400;600;700&amp;display=swap" rel="stylesheet">
+    @include('partials.brand-head')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 
     <!-- Bootstrap CSS [ REQUIRED ] -->
@@ -28,6 +25,7 @@
         <!-- Angara Custom Style -->
         <link rel="stylesheet" href="{{ asset('css/angara-style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/nifty-override.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/role-nav.css') }}">
         <link rel="stylesheet" href="{{ asset('css/angara-table.css') }}">
 
         <!-- Demo purpose CSS [ DEMO ] -->
@@ -53,11 +51,11 @@
 
  </head>
 
-<body class="out-quart" style="">
+<body class="out-quart @yield('body-class')" style="">
 
     <!-- PAGE CONTAINER -->
     <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
-    <div id="root" class="root mn--min tm--fair-hd hd--sticky mn--sticky">
+    <div id="root" class="root mn--max tm--fair-hd hd--sticky mn--sticky">
 
         <!-- CONTENTS -->
         <!-- ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ -->
@@ -86,7 +84,7 @@
             <!-- FOOTER -->
             <footer class="content__boxed mt-auto bc-pme-footer">
                 <div class="content__wrap py-3 py-md-1 d-flex flex-column flex-md-row align-items-md-center">
-                    <div class="text-nowrap mb-4 mb-md-0">Copyright &copy; {{ date('Y') }} <a href="#" class="ms-1 btn-link fw-bold">Angara finance</a></div>
+                    <div class="text-nowrap mb-4 mb-md-0">Copyright &copy; {{ date('Y') }} <a href="#" class="ms-1 btn-link fw-bold">{{ config('branding.name') }}</a></div>
                     <nav class="nav flex-column gap-1 flex-md-row gap-md-3 ms-md-auto" style="row-gap: 0 !important;">
                         @auth
                             @if (Route::has('document-templates.index'))
@@ -114,12 +112,12 @@
 
                      <!-- Brand logo -->
                      <a href="#" class="brand-img stretched-link">
-                        <img src="{{ asset('img/logo-bcpme.png') }}" alt="Banque Camerounaise des Petites et Moyennes Entreprises — Angara" class="Nifty logo" >
+                        <img src="{{ asset(config('branding.logo')) }}" alt="{{ config('branding.name') }}" class="Nifty logo" >
                      </a>
 
                      <!-- Icon logo (mode réduit) -->
                      <a href="#" class="brand-icon stretched-link">
-                        <img src="{{ asset('img/logo-bcpme.png') }}" alt="BC-PME" >
+                        <img src="{{ asset(config('branding.logo')) }}" alt="{{ config('branding.short_name') }}" >
                      </a>
                   </div>
                </div>

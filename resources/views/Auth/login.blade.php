@@ -5,13 +5,9 @@
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<title>
-			@yield('title') | ANGARA FINANCE
+			@yield('title') | {{ config('branding.name') }}
 		</title>
-		<link href="{{ asset('img/favicon.ico') }}" rel="icon">
-		<link href="{{ asset('img/apple-icon.png') }}" rel="apple-icon">
-		<link rel="preconnect" href="https://fonts.googleapis.com">
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+		@include('partials.brand-head')
 		<!-- Bootstrap CSS [ REQUIRED ] -->
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}">
         <!-- Angara Custom Style -->
@@ -19,6 +15,7 @@
         <link rel="stylesheet" href="{{ asset('css/nifty-override.css') }}">
 		<link href="{{ asset('css/style.css') }}" rel="stylesheet">
 		<link rel="stylesheet" href="{{ asset('css/nice-select2.css') }}">
+		<style>:root { --login-bg: {{ config('branding.colors.login_background') }}; }</style>
 
 	</head>
 
@@ -26,28 +23,7 @@
 		<div id="menu-overlay"></div>
 			<div class="main-container"> 
                 @php
-                    $table = [
-                        [
-                            'src' => "img/new/slides/slide-1.jpg",
-                            'alt' => "Angara agriculture",
-                            'text' => "Le système expert en finances pour fédérer tous les secteurs d’activités"
-                        ],
-                        [
-                            'src' => "img/new/slides/slide-2.jpg",
-                            'alt' => "Angara Elevage",
-                            'text' => "Recevez en temps réel les informations financières de votre secteur d’activité."
-                        ],
-                        [
-                            'src' => "img/new/slides/slide-3.jpg",
-                            'alt' => "Angara agriculture",
-                            'text' => "Mettez à niveau votre entreprise au niveau structurel et financier"
-            ],
-            [
-                            'src' => "img/new/slides/slide-4.jpg",
-                            'alt' => "Angara agriculture",
-                            'text' => "Optimisez votre entreprise pour vos besoins d'investissement"
-                        ]
-                    ];
+                    $table = config('branding.login.slides');
                 @endphp
 				<form method="post" class="form" action="{{route('login')}}">
                     @csrf
@@ -62,9 +38,9 @@
                                 <div class="carousel-inner h-100">
                                     @for ($i = 0; $i < count($table); $i++)
                                         <div class="carousel-item h-100 {{ $i === 0 ? 'active' : '' }}">
-                                            <div class="d-block w-100 h-100 mask" style="background-image: url({{ $table[$i]['src'] }});">
+                                            <div class="d-block w-100 h-100 mask" style="background-image: url({{ asset($table[$i]['src']) }});">
                                                 <div class="d-flex flex-column justify-content-end carousel-text h-100 w-30">
-                                                    <h3 class="color-primary bold">ANGARA</h3>
+                                                    <h3 class="color-primary bold">{{ config('branding.short_name') }}</h3>
                                                     <h4 class="color-ligth bold">{{ $table[$i]['text'] }}</h4>
                                                 </div>
                                             </div>
@@ -74,13 +50,13 @@
                             </div>
                         </aside>
                         <div class="login-content d-flex flex-column align-items-center justify-content-center">
-                            <img src="{{ asset('img/logo-bcpme.png') }}" alt="Angara — Banque Camerounaise des PME" class="margin-bottom">
-                            <h3 class="bold margin-bottom">Connectez vous</h3>
+                            <img src="{{ asset(config('branding.logo_square')) }}" alt="{{ config('branding.name') }}" class="margin-bottom brand-logo-square">
+                            <h3 class="bold margin-bottom">Connectez-vous</h3>
                             <input type="email" name="email" class="margin-bottom" v-model="user.email" placeholder="Email" autofocus>
                             {{-- @if ($errors->has('email'))
                                 <span class="text-danger">{{ $errors->first('email') }}</span>
                             @endif --}}
-                            <input type="password" name="password" v-model="user.password" class="margin-bottom" placeholder="Password">
+                            <input type="password" name="password" v-model="user.password" class="margin-bottom" placeholder="Mot de passe">
                             {{-- @if ($errors->has('password'))
                                 <span class="text-danger">{{ $errors->first('password') }}</span>
                             @endif --}}
@@ -99,4 +75,3 @@
 		<script src="/js/app.js"></script>
 
 	</html>
-

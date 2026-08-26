@@ -4,8 +4,8 @@
             <li class="nav-item">
 
                 <a id="btn-logout" href="#" class="nav-link">
-                    <i class="demo-pli-unlock fs-5 me-2"></i>
-                    <span class="nav-label ms-1">Se déconnecter</span>
+                    <span class="angara-nav-icon"><i class="bi bi-box-arrow-right" aria-hidden="true"></i></span>
+                    <span class="nav-label ms-0">Se déconnecter</span>
                 </a>
             </li>
         </ul>

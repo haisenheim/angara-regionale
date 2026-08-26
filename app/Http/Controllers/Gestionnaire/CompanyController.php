@@ -1009,7 +1009,10 @@ class CompanyController extends ExtendedController
         $checklist = $item->piecesExigiblesChecklist();
 
         $logoData = '';
-        $logoPath = public_path('img/logo-bcpme.png');
+        $logoPath = public_path(config('branding.logo_pdf'));
+        if (! is_readable($logoPath)) {
+            $logoPath = public_path('img/logo-bcpme.png');
+        }
         if (is_readable($logoPath)) {
             $logoData = base64_encode((string) file_get_contents($logoPath));
         }

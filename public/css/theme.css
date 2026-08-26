@@ -1,25 +1,28 @@
 :root {
-    /* Angara — identité BC‑PME (logo) + rendu banque sobre */
-    --bcpme-green: #91BD47; /* vert logo (accent) */
-    --bcpme-green-dark: #506926; /* dérivé assombri (nav / contrastes) */
-    --bcpme-green-subtle: #EDF6DE; /* fond 6–8% */
-    --bcpme-red: #D0362E; /* rouge logo (danger / risque) */
+    /* La Régionale Bank — charte graphique (#1B60A5 / #FEC900) */
+    --bcpme-green: #1B60A5; /* bleu institutionnel (alias legacy) */
+    --bcpme-green-dark: #154A7D; /* bleu assombri (nav / contrastes) */
+    --bcpme-green-subtle: #E8F1FA; /* fond bleu 6–8% */
+    --bcpme-accent: #FEC900; /* jaune/or logo (clé) */
+    --bcpme-accent-dark: #E5B500;
+    --bcpme-accent-subtle: #FFF8DC;
+    --bcpme-red: #D0362E; /* danger / risque */
     --bcpme-red-dark: #B92B24;
     --bcpme-red-subtle: #FDE9E8;
 
-    /* Surfaces & texte (quiet luxury) */
+    /* Surfaces & texte */
     --bg-color: #F7F8FA;
     --gray-1: #E6E8EC;
     --border-color-bcpme: #E6E8EC;
     --ligth-color: #ffffff;
-    --dark-color: #111827; /* anthracite banque */
+    --dark-color: #111827;
     --text-body: #111827;
     --text-muted-custom: #4B5563;
 
-    /* Actions primaires = anthracite (CTA) */
-    --primary-color: #111827;
-    --primary-dark: #0B1220;
-    --primary-light: #EEF2FF;
+    /* Actions primaires = bleu institutionnel */
+    --primary-color: #1B60A5;
+    --primary-dark: #154A7D;
+    --primary-light: #E8F1FA;
     --on-primary: #ffffff;
 
     /* Sémantique */
@@ -176,15 +179,15 @@
     --primary-200: #f0a3b3;
     --primary-300: #e6758d;
     --primary-400: #d84867;
-    --primary-500: #c41e3a;
-    --primary-600: #9e1830;
-    --primary-700: #7a1326;
-    --primary-800: #570e1c;
-    --primary-900: #3a0a12;
-    /* Bootstrap primary (rouge BC-PME) */
-    --bs-primary: #c41e3a;
-    --bs-primary-rgb: 196, 30, 58;
-    --bs-primary-text-emphasis: #5c0f1e;
-    --bs-primary-bg-subtle: #fce8ec;
-    --bs-primary-border-subtle: #e8a0b0;
+    --primary-500: #1B60A5;
+    --primary-600: #154A7D;
+    --primary-700: #124880;
+    --primary-800: #0E3A66;
+    --primary-900: #0A2C4D;
+    /* Bootstrap primary (bleu Régionale Bank) */
+    --bs-primary: #1B60A5;
+    --bs-primary-rgb: 27, 96, 165;
+    --bs-primary-text-emphasis: #0A2C4D;
+    --bs-primary-bg-subtle: #E8F1FA;
+    --bs-primary-border-subtle: #A8C8E8;
 }

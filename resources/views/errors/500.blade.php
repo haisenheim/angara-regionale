@@ -10,13 +10,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="robots" content="noindex, nofollow">
-    <title>Erreur serveur — ANGARA</title>
+    <title>Erreur serveur — {{ config('branding.name') }}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bcpme-green: #88b824;
+            --brand-primary: #1B60A5;
+            --brand-accent: #FEC900;
             --bcpme-red: #c41e3a;
             --bg: #0f1419;
             --surface: #1a222d;
@@ -201,8 +202,8 @@
         <div class="brand">
             <div class="brand-mark">BC</div>
             <div>
-                <h1>ANGARA</h1>
-                <span>BC-PME — Plateforme financière</span>
+                <h1>{{ config('branding.name') }}</h1>
+                <span>{{ config('branding.tagline') }}</span>
             </div>
         </div>
 

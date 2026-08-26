@@ -310,7 +310,10 @@ class PortfolioController extends Controller
         $checklist = $item->piecesExigiblesChecklist();
 
         $logoData = '';
-        $logoPath = public_path('img/logo-bcpme.png');
+        $logoPath = public_path(config('branding.logo_pdf'));
+        if (! is_readable($logoPath)) {
+            $logoPath = public_path('img/logo-bcpme.png');
+        }
         if (is_readable($logoPath)) {
             $logoData = base64_encode((string) file_get_contents($logoPath));
         }
@@ -1607,7 +1610,10 @@ class PortfolioController extends Controller
         $data = app(DossierInstructionShowPresenter::class)->presentForDossier($dossier);
 
         $logoData = '';
-        $logoPath = public_path('img/logo-bcpme.png');
+        $logoPath = public_path(config('branding.logo_pdf'));
+        if (! is_readable($logoPath)) {
+            $logoPath = public_path('img/logo-bcpme.png');
+        }
         if (is_readable($logoPath)) {
             $logoData = base64_encode((string) file_get_contents($logoPath));
         }
@@ -1795,7 +1801,10 @@ class PortfolioController extends Controller
         $doc = app(InstructionAnalyseCritiqueDossierDocumentService::class)->build($dossier);
 
         $logoData = '';
-        $logoPath = public_path('img/logo-bcpme.png');
+        $logoPath = public_path(config('branding.logo_pdf'));
+        if (! is_readable($logoPath)) {
+            $logoPath = public_path('img/logo-bcpme.png');
+        }
         if (is_readable($logoPath)) {
             $logoData = base64_encode((string) file_get_contents($logoPath));
         }

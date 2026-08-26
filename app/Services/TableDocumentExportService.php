@@ -10,12 +10,22 @@ class TableDocumentExportService
 {
     public static function defaultLogoDataUri(): ?string
     {
-        foreach (['img/logo-bcpme.png', 'img/logo.png'] as $rel) {
+        foreach ([
+            config('branding.logo_pdf'),
+            'img/logo-bcpme.png',
+            'img/logo.png',
+        ] as $rel) {
             $path = public_path($rel);
             if (! File::isReadable($path)) {
                 continue;
             }
-            $mime = str_ends_with(strtolower($path), '.png') ? 'image/png' : 'image/jpeg';
+            $ext = strtolower(pathinfo($path, PATHINFO_EXTENSION));
+            $mime = match ($ext) {
+                'png' => 'image/png',
+                'jpg', 'jpeg' => 'image/jpeg',
+                'svg' => 'image/svg+xml',
+                default => 'image/png',
+            };
 
             return 'data:'.$mime.';base64,'.base64_encode((string) File::get($path));
         }

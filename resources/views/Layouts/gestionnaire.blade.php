@@ -1,4 +1,4 @@
-@extends('Layouts.app')
+@extends('Layouts.role')
 @section('top')
 @include('partials.layout-role-header-top', [
     'roleLabel' => 'Gestionnaire',
@@ -6,48 +6,49 @@
 ])
 @endsection
 @section('navigation')
+@include('partials.role-nav-header', ['role' => 'Gestionnaire', 'icon' => 'bi-briefcase'])
  <!-- Navigation Category -->
  <?php
     $active = \Illuminate\Support\Facades\Session::get('active');
     $r = request()->route()?->getName() ?? '';
 ?>
-<div class="mainnav__categoriy py-3 mb-0">
-    <ul class="mainnav__menu nav flex-column gap-2">
+<div class="mainnav__categoriy py-2 mb-0">
+    <ul class="mainnav__menu nav flex-column gap-1">
        <li class="nav-item">
-           <a href="{{ route('gestionnaire.dashboard') }}" class="nav-link mininav-toggle {{ $active==1?'active':'' }}"><i class="bi bi-house-door fs-4 me-2"></i>
-               <span class="nav-label mininav-content ms-1">Accueil</span>
+           <a href="{{ route('gestionnaire.dashboard') }}" class="nav-link mininav-toggle {{ $active==1?'active':'' }}"><span class="angara-nav-icon"><i class="bi bi-house-door" aria-hidden="true"></i></span>
+               <span class="nav-label mininav-content">Accueil</span>
            </a>
        </li>
 
     </ul>
 </div>
-<div class="mainnav__categoriy py-3">
-    <h6 class="mainnav__caption mt-0 px-3 fw-bold">INTERMEDIATION</h6>
+<div class="mainnav__categoriy py-2">
+    <h6 class="mainnav__caption mt-0 px-3 ">Intermédiation</h6>
     <ul class="mainnav__menu nav flex-column">
 
         <li class="nav-item">
-            <a href="{{ route('gestionnaire.dossiers.index') }}" class="nav-link mininav-toggle {{ $active==201?'active':'' }}"><i class="bi bi-folder2 fs-5 me-2"></i>
-                <span class="nav-label mininav-content ms-1">INSTRUCTION</span>
+            <a href="{{ route('gestionnaire.dossiers.index') }}" class="nav-link mininav-toggle {{ $active==201?'active':'' }}"><span class="angara-nav-icon"><i class="bi bi-folder2-open" aria-hidden="true"></i></span>
+                <span class="nav-label mininav-content">Instruction</span>
             </a>
         </li>
     </ul>
 </div>
-<div class="mainnav__categoriy py-3">
-    <h6 class="mainnav__caption mt-0 px-3 fw-bold">PORTEFEUILLE</h6>
+<div class="mainnav__categoriy py-2">
+    <h6 class="mainnav__caption mt-0 px-3 ">Portefeuille</h6>
     <ul class="mainnav__menu nav flex-column">
        <li class="nav-item">
-           <a href="{{ route('gestionnaire.entreprises.index') }}" class="nav-link mininav-toggle {{ $active==401?'active':'' }}"><i class="bi bi-bank fs-5 me-2"></i>
-               <span class="nav-label mininav-content ms-1">Entreprises</span>
+           <a href="{{ route('gestionnaire.entreprises.index') }}" class="nav-link mininav-toggle {{ $active==401?'active':'' }}"><span class="angara-nav-icon"><i class="bi bi-building" aria-hidden="true"></i></span>
+               <span class="nav-label mininav-content">Entreprises</span>
            </a>
        </li>
        <li class="nav-item">
-            <a href="{{ route('gestionnaire.entreprises.prospects') }}" class="nav-link mininav-toggle {{ $active==404?'active':'' }}"><i class="bi bi-telephone fs-5 me-2"></i>
-                <span class="nav-label mininav-content ms-1">Prospects</span>
+            <a href="{{ route('gestionnaire.entreprises.prospects') }}" class="nav-link mininav-toggle {{ $active==404?'active':'' }}"><span class="angara-nav-icon"><i class="bi bi-person-plus" aria-hidden="true"></i></span>
+                <span class="nav-label mininav-content">Prospects</span>
             </a>
         </li>
         <li class="nav-item">
-            <a href="{{ route('gestionnaire.programmes.index') }}" class="nav-link mininav-toggle {{ $active==405?'active':'' }}"><i class="bi bi-diagram-3 fs-5 me-2"></i>
-                <span class="nav-label mininav-content ms-1">programmes</span>
+            <a href="{{ route('gestionnaire.programmes.index') }}" class="nav-link mininav-toggle {{ $active==405?'active':'' }}"><span class="angara-nav-icon"><i class="bi bi-diagram-3" aria-hidden="true"></i></span>
+                <span class="nav-label mininav-content">Programmes</span>
             </a>
         </li>
 

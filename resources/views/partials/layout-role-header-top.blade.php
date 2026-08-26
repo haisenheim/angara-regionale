@@ -16,7 +16,7 @@
         if ($agence) {
             $primaryBadge = $agence->name.($agence->representation ? ' — '.$agence->representation->name : '');
         } else {
-            $primaryBadge = 'BC-PME';
+            $primaryBadge = config('branding.short_name');
         }
     }
 

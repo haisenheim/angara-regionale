@@ -1,23 +1,23 @@
 /**
- * Angara — thème BC‑PME “banque sobre”.
- * - CTA: anthracite
- * - Accent: vert logo BC‑PME (micro-détails)
- * - Danger/Risque: rouge logo BC‑PME
+ * La Régionale Bank — thème institutionnel.
+ * Charte : bleu #1B60A5, accent or #FEC900, police Lato.
  */
 
 :root,
 html[data-scheme="corn"] {
-    --bcpme-green: #91BD47; /* vert logo */
-    --bcpme-green-dark: #506926; /* dérivé assombri */
-    --bcpme-green-subtle: #EDF6DE;
-    --bcpme-red: #D0362E; /* rouge logo */
+    --bcpme-green: #1B60A5;
+    --bcpme-green-dark: #154A7D;
+    --bcpme-green-subtle: #E8F1FA;
+    --bcpme-accent: #FEC900;
+    --bcpme-accent-dark: #E5B500;
+    --bcpme-accent-subtle: #FFF8DC;
+    --bcpme-red: #D0362E;
     --bcpme-red-dark: #B92B24;
     --bcpme-red-subtle: #FDE9E8;
 
-    /* Primary (CTA) = anthracite */
-    --bcpme-ink: #111827;
-    --bcpme-ink-dark: #0B1220;
-    --bcpme-ink-subtle: #F3F4F6;
+    --bcpme-ink: #1B60A5;
+    --bcpme-ink-dark: #154A7D;
+    --bcpme-ink-subtle: #E8F1FA;
 
     --nifty-primary: var(--bcpme-ink);
     --nifty-primary-dark: var(--bcpme-ink-dark);
@@ -36,13 +36,13 @@ html[data-scheme="corn"] {
     --bs-border-color: #E6E8EC;
     --bs-secondary-color: #4B5563;
     --bs-primary: var(--bcpme-ink);
-    --bs-primary-rgb: 17, 24, 39;
-    --bs-link-color: #111827;
-    --bs-link-hover-color: #0B1220;
+    --bs-primary-rgb: 27, 96, 165;
+    --bs-link-color: #1B60A5;
+    --bs-link-hover-color: #154A7D;
 }
 
 html {
-    font-family: "Inter", "Open Sans", system-ui, -apple-system, sans-serif;
+    font-family: "Lato", system-ui, -apple-system, sans-serif;
 }
 
 body {
@@ -63,27 +63,25 @@ h6 {
 
 .page-title {
     color: #111827;
-    font-weight: 650;
+    font-weight: 700;
     text-transform: none;
     letter-spacing: 0;
 }
 
-/* —— Top header: white bar, subtle bottom border —— */
 .header {
     --nf-header-bg: #ffffff;
     --nf-header-color: #1a1a1a;
     --nf-header-secondary-color: #6b6b6b;
     --nf-header-border-color: #e0e0e0;
     --nf-header-shadow: none;
-    --nf-header-btn-hover-bg: rgba(26, 26, 26, 0.08);
-    --nf-header-btn-hover-color: #1a1a1a;
+    --nf-header-btn-hover-bg: rgba(27, 96, 165, 0.08);
+    --nf-header-btn-hover-color: #1B60A5;
     --nf-brand-bg: #ffffff;
     --nf-brand-color: #1a1a1a;
     border-bottom: 1px solid #e0e0e0;
     box-shadow: none !important;
 }
 
-/* Fair header: keep logo strip white on desktop (Nifty ties brand to mainnav) */
 @media (min-width: 992px) {
     .tm--fair-hd.mn--min .header__brand,
     .mn--min.tm--tall-hd .header__brand,
@@ -94,7 +92,6 @@ h6 {
     }
 }
 
-/* —— Main navigation (sidebar): vert BC-PME #88b824, actif lisible sur fond clair —— */
 .mainnav {
     --nf-mainnav-bg: var(--bcpme-green-dark);
     --nf-mainnav-color: rgba(255, 255, 255, 0.95);
@@ -102,7 +99,7 @@ h6 {
     --nf-mainnav-link-color: rgba(255, 255, 255, 0.9);
     --nf-mainnav-link-hover: #ffffff;
     --nf-mainnav-link-active: #1a1a1a;
-    --nf-mainnav-link-active-underline-color: rgba(255, 255, 255, 0.35);
+    --nf-mainnav-link-active-underline-color: rgba(254, 201, 0, 0.45);
     --nf-mainnav-icon-color: rgba(255, 255, 255, 0.95);
     --nf-mainnav-heading-color: rgba(255, 255, 255, 0.72);
     --nf-mainnav-border-color: rgba(0, 0, 0, 0.12);
@@ -111,7 +108,7 @@ h6 {
     --nf-mainnav-submenu-active-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
     --nf-mainnav-submenu-dashed-color: rgba(255, 255, 255, 0.35);
     --nf-mainnav-min-icon-color: #ffffff;
-    --nf-mainnav-min-icon-active-color: var(--bcpme-green);
+    --nf-mainnav-min-icon-active-color: var(--bcpme-accent);
     --nf-mainnav-min-submenu-active-bg: #ffffff;
     --nf-mainnav-min-submenu-active-color: #1a1a1a;
 }
@@ -135,7 +132,7 @@ h6 {
 
 .mainnav__inner .mainnav__menu > .nav-item > .nav-link.active i,
 .mainnav__inner .mainnav__menu > .nav-item > .nav-link.active .nav-icon {
-    color: #88b824 !important;
+    color: #1B60A5 !important;
 }
 
 .mainnav__inner .mainnav__menu > .nav-item > .nav-link.active .nav-label {
@@ -143,7 +140,7 @@ h6 {
 }
 
 .mainnav__bottom-content {
-    background-color: #6f9a1c !important;
+    background-color: #124880 !important;
     border-color: rgba(0, 0, 0, 0.1) !important;
 }
 
@@ -155,7 +152,6 @@ h6 {
     color: #ffffff !important;
 }
 
-/* Section labels / small caps */
 .bc-pme-label,
 .section-label {
     font-size: 0.75rem;
@@ -165,7 +161,6 @@ h6 {
     color: #6b6b6b;
 }
 
-/* —— Primary / outline buttons (CTA anthracite) —— */
 .btn-primary,
 a.btn-primary {
     --bs-btn-bg: var(--bcpme-ink);
@@ -185,9 +180,9 @@ a.btn-primary {
 .btn-outline-primary,
 a.btn-outline-primary {
     --bs-btn-color: var(--bcpme-ink);
-    --bs-btn-border-color: #D1D5DB;
-    --bs-btn-hover-bg: #F3F4F6;
-    --bs-btn-hover-border-color: #9CA3AF;
+    --bs-btn-border-color: #A8C8E8;
+    --bs-btn-hover-bg: var(--bcpme-green-subtle);
+    --bs-btn-hover-border-color: var(--bcpme-ink);
     --bs-btn-hover-color: var(--bcpme-ink-dark);
     border-width: 1px;
     border-radius: 10px;
@@ -199,7 +194,6 @@ a.btn-outline-primary {
     border-radius: 4px;
 }
 
-/* Badges */
 .badge.bg-primary,
 span.badge.bg-primary {
     background-color: var(--bcpme-ink) !important;
@@ -212,7 +206,6 @@ span.badge.bg-primary {
     color: #2e7d32 !important;
 }
 
-/* Cards */
 .card {
     background-color: #ffffff;
     border: 1px solid #E6E8EC;
@@ -236,7 +229,6 @@ span.badge.bg-primary {
     border-bottom: 1px solid #E6E8EC;
 }
 
-/* Feature icon discs (vert institutionnel + pastille) */
 .bc-pme-icon-circle {
     display: inline-flex;
     align-items: center;
@@ -248,53 +240,49 @@ span.badge.bg-primary {
     color: var(--bcpme-green);
 }
 
-/* Footer (in-layout) — sobre, filet vert BC-PME */
 .bc-pme-footer {
-    background-color: #1a1a1a !important;
-    color: #cccccc !important;
-    border-top: 3px solid var(--bcpme-green) !important;
+    background-color: #154A7D !important;
+    color: #e8f1fa !important;
+    border-top: 3px solid var(--bcpme-accent) !important;
 }
 
 .bc-pme-footer a {
-    color: #cccccc !important;
+    color: #e8f1fa !important;
 }
 
 .bc-pme-footer a:hover {
-    color: var(--bcpme-green) !important;
+    color: var(--bcpme-accent) !important;
 }
 
 .bc-pme-footer .nav-link {
-    color: #cccccc !important;
+    color: #e8f1fa !important;
 }
 
 .bc-pme-footer .nav-link:hover {
-    color: var(--bcpme-green) !important;
+    color: var(--bcpme-accent) !important;
 }
 
 .bc-pme-footer .btn-link {
-    color: #cccccc !important;
+    color: #e8f1fa !important;
 }
 
 .bc-pme-footer .btn-link:hover {
-    color: var(--bcpme-green) !important;
+    color: var(--bcpme-accent) !important;
 }
 
-/* Secondary sidebar (Nifty aside) */
 .sidebar {
     background-color: #F7F8FA;
     border-inline-start: 1px solid #E6E8EC;
 }
 
-/* Header controls: avoid pill shape on search toggles */
 .header .rounded-pill {
     border-radius: 4px !important;
 }
 
-/* Logo barre : zone blanche, logo horizontal BC-PME */
 .header__brand .brand-wrap .brand-img img {
     max-height: 2.75rem;
     width: auto;
-    max-width: min(220px, 36vw);
+    max-width: min(280px, 42vw);
     height: auto;
     object-fit: contain;
 }
@@ -306,13 +294,11 @@ span.badge.bg-primary {
     object-fit: contain;
 }
 
-/* Scroll-to-top : vert institutionnel */
 .scroll-page {
     --nf-btn-scroll-bg: var(--bcpme-green-dark);
     --nf-btn-scroll-color: #ffffff;
 }
 
-/* Danger = rouge logo (sans toucher CTA) */
 .btn-danger,
 a.btn-danger {
     --bs-btn-bg: var(--bcpme-red);
@@ -327,31 +313,26 @@ a.btn-danger {
     box-shadow: none !important;
 }
 
-/* Brand helpers (accent vert logo, sobre) */
 .text-brand {
     color: var(--bcpme-green) !important;
 }
 
 .border-brand {
-    border-color: var(--bcpme-green) !important;
+    border-color: var(--bcpme-accent) !important;
 }
 
 .bg-brand-subtle {
     background-color: var(--bcpme-green-subtle) !important;
 }
 
-/**
- * Zone @yield('actions') : déclencheur menu vert institutionnel (#91BD47)
- * — harmonise tous les menus d’actions d’en-tête (dropdown ou btn-group).
- */
 .angara-page-actions .dropdown > .dropdown-toggle,
 .angara-page-actions .btn-group > .dropdown-toggle {
-    --angara-actions-bg: #91bd47;
-    --angara-actions-bg-hover: #7aad3a;
-    --angara-actions-border: #91bd47;
+    --angara-actions-bg: #FEC900;
+    --angara-actions-bg-hover: #E5B500;
+    --angara-actions-border: #FEC900;
     background-color: var(--angara-actions-bg) !important;
     border-color: var(--angara-actions-border) !important;
-    color: #fff !important;
+    color: #111827 !important;
     font-weight: 600;
     border-radius: 10px;
     box-shadow: none !important;
@@ -365,20 +346,20 @@ a.btn-danger {
 .angara-page-actions .btn-group > .dropdown-toggle.show {
     background-color: var(--angara-actions-bg-hover) !important;
     border-color: var(--angara-actions-bg-hover) !important;
-    color: #fff !important;
+    color: #111827 !important;
 }
 
 .angara-page-actions .dropdown > .dropdown-toggle:focus-visible {
-    box-shadow: 0 0 0 0.2rem rgba(145, 189, 71, 0.35) !important;
+    box-shadow: 0 0 0 0.2rem rgba(254, 201, 0, 0.45) !important;
 }
 
 .btn-angara-actions.dropdown-toggle,
 .btn-angara-actions.dropdown-toggle.show {
-    --angara-actions-bg: #91bd47;
-    --angara-actions-bg-hover: #7aad3a;
+    --angara-actions-bg: #FEC900;
+    --angara-actions-bg-hover: #E5B500;
     background-color: var(--angara-actions-bg) !important;
     border-color: var(--angara-actions-bg) !important;
-    color: #fff !important;
+    color: #111827 !important;
     font-weight: 600;
     border-radius: 10px;
     box-shadow: none !important;
@@ -389,6 +370,5 @@ a.btn-danger {
 .btn-angara-actions.dropdown-toggle.show {
     background-color: var(--angara-actions-bg-hover) !important;
     border-color: var(--angara-actions-bg-hover) !important;
-    color: #fff !important;
+    color: #111827 !important;
 }
-
