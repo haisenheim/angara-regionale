@@ -1,2 +1,20 @@
 composer remove tcg/voyager php-open-source-saver/jwt-auth laravel/sanctum ladumor/one-signal masbug/flysystem-google-drive-ext google/apiclient
 composer remove --dev kitloong/laravel-migrations-generator laravel/sail
+
+
+docker run -d \
+  --name angara-instruction \
+  -p 8080:8080 \
+  -e TZ=UTC \
+  -e PORT=8080 \
+  -e HOST=0.0.0.0 \
+  -e LOG_LEVEL=info \
+  -e APP_KEY='JjHakrtXi-h1SfxJJXR2G_iRptYGZoFQdferyg345d' \
+  -e NODE_ENV=development \
+  -e DB_CONNECTION=mysql \
+  -e DB_HOST=localhost \
+  -e DB_PORT=3306 \
+  -e DB_USER=root \
+  -e DB_PASSWORD= \
+  -e DB_DATABASE=angara \
+  alliages/angara-instruction:latest
