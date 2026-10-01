@@ -10,14 +10,14 @@ Contenu du dossier :
 
 ## Sécurité
 
-Ce dossier contient des secrets (mots de passe, clés). Ne le commitez pas dans un dépôt public. Régénérez `APP_KEY` et `JWT_SECRET` si ce fichier a fuité.
+Ce dossier contient des secrets (mots de passe, clés). Ne le commitez pas dans un dépôt public. Régénérez `APP_KEY` si ce fichier a fuité.
 
 Pour régénérer sur le serveur :
 
 ```bash
 cd /var/www/angara-bcpme
 php artisan key:generate --force
-# JWT : mettre une nouvelle chaîne longue dans JWT_SECRET puis php artisan config:cache
+php artisan config:cache
 ```
 
 ## Déploiement rapide
@@ -39,4 +39,4 @@ Adapter la ligne `fastcgi_pass` dans `nginx-angara.conf`.
 
 ## URL
 
-`APP_URL` est défini sur `http://192.168.120.20`. Si l’accès se fait par un autre nom ou en HTTPS, mettre à jour `APP_URL` et `STRUCTURATION_CENTRAL_EXTRA` / `SANCTUM_STATEFUL_DOMAINS` en conséquence, puis `php artisan config:cache`.
+`APP_URL` est défini sur `http://192.168.120.20`. Si l’accès se fait par un autre nom ou en HTTPS, mettre à jour `APP_URL` et `STRUCTURATION_CENTRAL_EXTRA` en conséquence, puis `php artisan config:cache`.

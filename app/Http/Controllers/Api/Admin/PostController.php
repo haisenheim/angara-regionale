@@ -6,8 +6,6 @@ use App\Http\Controllers\ExtendedController;
 use App\Http\Resources\PostResource;
 use App\Models\Post;
 use App\Models\PostCategory;
-use App\Services\OneSignalNotification;
-
 class PostController extends ExtendedController
 {
 
@@ -31,13 +29,8 @@ class PostController extends ExtendedController
         unset($data['photo']);
         unset($data['doc']);
         $item = Post::create($data);
-        $data['content'] = new PostResource($item);
-        $fields['include_external_user_ids'] = ['90239328327837'];
-        $fields['channel_for_external_user_ids'] = "push";
-        $fields['data'] = $data;
-        $message = $item->name;
-        $response = OneSignalNotification::send($fields,$message);
-        return response()->json($response);
+
+        return response()->json(new PostResource($item), 201);
     }
 
     public function create(){

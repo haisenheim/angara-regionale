@@ -7,10 +7,6 @@ use Illuminate\Notifications\Channels\DatabaseChannel as IlluminateDatabaseChann
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
 
-use Illuminate\Support\Facades\Storage;
-use League\Flysystem\Filesystem;
-use Masbug\Flysystem\GoogleDriveAdapter;
-
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -29,10 +25,5 @@ class AppServiceProvider extends ServiceProvider
         Paginator::useBootstrapFive();
 
         $this->app->instance(IlluminateDatabaseChannel::class, new AngaraNotificationChannel());
-
-        Storage::extend('google', function ($app, $config) {
-            $adapter = new GoogleDriveAdapter($config);
-            return new Filesystem($adapter);
-        });
     }
 }
