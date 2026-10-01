@@ -18,3 +18,44 @@ docker run -d \
   -e DB_PASSWORD= \
   -e DB_DATABASE=angara \
   alliages/angara-instruction:latest
+
+
+
+
+
+server {
+    server_name regionale.angara-finance.net www.regionale.angara-finance.net;
+    root /var/www/angara/programmes/regionale/public;
+
+    index index.html index.htm index.php;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.3-fpm.sock;
+     }
+
+    location ~ /\.ht {
+        deny all;
+    }
+
+
+#   listen 443 ssl; # managed by Certbot
+#   ssl_certificate /etc/letsencrypt/live/demo.angara-finance.net/fullchain.pem; # managed by Certbot
+#   ssl_certificate_key /etc/letsencrypt/live/demo.angara-finance.net/privkey.pem; # managed by Certbot
+#   include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+#    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/regionale.angara-finance.net/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/regionale.angara-finance.net/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+}
+
