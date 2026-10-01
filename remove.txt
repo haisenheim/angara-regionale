@@ -1,0 +1,2 @@
+composer remove tcg/voyager php-open-source-saver/jwt-auth laravel/sanctum ladumor/one-signal masbug/flysystem-google-drive-ext google/apiclient
+composer remove --dev kitloong/laravel-migrations-generator laravel/sail
